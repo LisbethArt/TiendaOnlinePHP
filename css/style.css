@@ -184,7 +184,7 @@ textarea.input {
 }
 
 .input-number input[type="number"] {
-  -moz-appearance: textfield;
+  --moz-appearance: textfield;
   height: 40px;
   width: 100%;
   border: 1px solid #E4E7ED;
@@ -947,6 +947,7 @@ background: linear-gradient(to bottom, #4f87f6, #71b3ed, #12c2e9); /* W3C, IE 10
   max-height: 130px;
   max-width: 130px;
   padding: 5px;
+  object-fit: contain;
 }
 
 .product .product-img>img {
@@ -1182,6 +1183,8 @@ background: linear-gradient(to bottom, #4f87f6, #71b3ed, #12c2e9); /* W3C, IE 10
 
 .product-widget .product-img>img {
   width: 100%;
+  max-height: 50px !important;
+  object-fit: contain !important;
 }
 
 .product-widget .product-body {

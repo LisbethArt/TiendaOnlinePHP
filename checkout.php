@@ -270,7 +270,7 @@ span.price {
 				</table>
 				<hr>
 				
-				<h3>Total<span class='price' style='color:black'><b>$$total</b></span></h3>";
+				<h3>Total<span class='price' style='color:black'><b>$" . number_format($total, 2) ."</b></span></h3>";
 					
 				}
 				?>

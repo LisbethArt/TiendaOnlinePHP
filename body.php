@@ -159,9 +159,11 @@
 
 						if ($prod_w_dis == 1) {
 							$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-							$price_html = "<h4 class='product-price'>$" . number_format($discounted_price, 2) . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
+							$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+							$sale_label = "<span class='sale'>-$prod_dis%</span>";
 						} else {
-							$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
+							$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+							$sale_label = "";
 						}
 
 						echo "
@@ -170,7 +172,7 @@
 								<div class='product-img'>
 									<img src='product_images/$pro_image' class='img-card' alt=''>
 									<div class='product-label'>
-										<span class='sale'>-30%</span>
+										$sale_label
 										<span class='new'>NEW</span>
 									</div>
 								</div>
@@ -319,9 +321,11 @@
 
 						if ($prod_w_dis == 1) {
 							$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-							$price_html = "<h4 class='product-price'>$" . number_format($discounted_price, 2) . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
+							$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+							$sale_label = "<span class='sale'>-$prod_dis%</span>";
 						} else {
-							$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
+							$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+							$sale_label = "";
 						}
 
 						echo "
@@ -330,7 +334,7 @@
 								<div class='product-img'>
 									<img src='product_images/$pro_image' class='img-card' alt=''>
 									<div class='product-label'>
-										<span class='sale'>-30%</span>
+										$sale_label
 										<span class='new'>NEW</span>
 									</div>
 								</div>
@@ -414,9 +418,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price, 2) . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
 										}
 								
 										echo "
@@ -458,9 +462,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price, 2) . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
 										}
 								
 										echo "
@@ -513,9 +517,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price, 2) . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
 										}
 								
 										echo "
@@ -557,9 +561,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price, 2) . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
 										}
 								
 										echo "
@@ -614,9 +618,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price, 2) . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
 										}
 								
 										echo "
@@ -658,9 +662,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price, 2) . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
 										}
 								
 										echo "

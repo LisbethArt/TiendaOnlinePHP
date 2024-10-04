@@ -119,28 +119,46 @@ include "header.php";
 									?>
 									<!-- FlexSlider -->
 									
-									<?php 
-									echo '
-									
-                                    
-                                   
-                    <div class="col-md-5">
-						<div class="product-details">
-							<h2 class="product-name">'.$row['product_title'].'</h2>
-							<div>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-o"></i>
-								</div>
-								<a class="review-link" href="#review-form">10 Reseña(s) | Añade tu reseña</a>
-							</div>
-							<div>
-								<h3 class="product-price">$'.$row['product_price'].'<del class="product-old-price">$detalleProducto.00</del></h3>
-								<span class="product-available">En Stock</span>
-							</div>
+									<?php
+						include 'db.php';
+						$product_id = $_GET['p'];
+
+						$sql = "SELECT * FROM products WHERE product_id = $product_id";
+						if (!$con) {
+							die("Connection failed: " . mysqli_connect_error());
+						}
+						$result = mysqli_query($con, $sql);
+						if (mysqli_num_rows($result) > 0) {
+							while($row = mysqli_fetch_assoc($result)) {
+								$pro_price = $row['product_price'];
+								$prod_w_dis = $row['product_with_discount'];
+								$prod_dis = $row['product_discount'];
+
+								if ($prod_w_dis == 1) {
+									$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
+									$price_html = "<h3 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h3>";
+								} else {
+									$price_html = "<h3 class='product-price'>$" . $pro_price . "</h3>";
+								}
+
+								echo '
+								<div class="col-md-5">
+									<div class="product-details">
+										<h2 class="product-name">'.$row['product_title'].'</h2>
+										<div>
+											<div class="product-rating">
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star"></i>
+												<i class="fa fa-star-o"></i>
+											</div>
+											<a class="review-link" href="#review-form">10 Reseña(s) | Añade tu reseña</a>
+										</div>
+										<div>
+											'.$price_html.'
+											<span class="product-available">En Stock</span>
+										</div>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 
 							<div class="product-options">
@@ -160,7 +178,7 @@ include "header.php";
 
 							<div class="add-to-cart">
 								<div class="qty-label">
-									Qty
+									Cantidad
 									<div class="input-number">
 										<input class="input" type="text" placeholder="1">
 										
@@ -444,8 +462,11 @@ include "header.php";
 							
 						</div>
 					</div>
-                    ';
-									$_SESSION['product_id'] = $row['product_id'];
+                     ';
+					 $_SESSION['product_id'] = $row['product_id'];
+    }
+}
+									
 									}
 								} 
 								?>	
@@ -459,13 +480,23 @@ include "header.php";
 
                     while($row = mysqli_fetch_array($run_query)){
                         $pro_id    = $row['product_id'];
-                        $pro_cat   = $row['product_cat'];
-                        $pro_brand = $row['product_brand'];
-                        $pro_title = $row['product_title'];
-                        $pro_price = $row['product_price'];
-                        $pro_image = $row['product_image'];
+						$pro_cat   = $row['product_cat'];
+						$pro_brand = $row['product_brand'];
+						$pro_title = $row['product_title'];
+						$pro_price = $row['product_price'];
+						$pro_image = $row['product_image'];
+						$cat_name = $row["cat_title"];
+						$prod_w_dis = $row['product_with_discount'];
+						$prod_dis = $row['product_discount'];
 
-                        $cat_name = $row["cat_title"];
+						if ($prod_w_dis == 1) {
+							$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
+							$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+							$sale_label = "<span class='sale'>-$prod_dis%</span>";
+						} else {
+							$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+							$sale_label = "";
+						}
 
                         echo "
 				
@@ -475,14 +506,14 @@ include "header.php";
 									<div class='product-img'>
 										<img src='product_images/$pro_image' class='img-card' alt=''>
 										<div class='product-label'>
-											<span class='sale'>-30%</span>
-											<span class='new'>NEW</span>
-										</div>
+										$sale_label
+										<span class='new'>NEW</span>
+									</div>
 									</div></a>
 									<div class='product-body'>
-										<p class='product-category'>$cat_name</p>
-										<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
-										<h4 class='product-price header-cart-item-info'>$". number_format($pro_price, 2) ."<del class='product-old-price'>$0Producto.00</del></h4>
+													<p class='product-category'>$cat_name</p>
+													<h3 class='product-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
+													$price_html
 										<div class='product-rating'>
 											<i class='fa fa-star'></i>
 											<i class='fa fa-star'></i>
