@@ -136,7 +136,7 @@ include "header.php";
 
 								if ($prod_w_dis == 1) {
 									$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-									$price_html = "<h3 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h3>";
+									$price_html = "<h3 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h3>";
 								} else {
 									$price_html = "<h3 class='product-price'>$" . $pro_price . "</h3>";
 								}
@@ -491,7 +491,7 @@ include "header.php";
 
 						if ($prod_w_dis == 1) {
 							$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-							$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+							$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 							$sale_label = "<span class='sale'>-$prod_dis%</span>";
 						} else {
 							$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";

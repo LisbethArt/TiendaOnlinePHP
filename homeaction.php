@@ -85,7 +85,7 @@ if(isset($_POST["getProducthome"])){
 
 			if ($prod_w_dis == 1) {
 				$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-				$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+				$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 			} else {
 				$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
 			}

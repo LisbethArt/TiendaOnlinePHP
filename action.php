@@ -117,7 +117,7 @@ if(isset($_POST["getProduct"])){
 
 			if ($prod_w_dis == 1) {
 				$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-				$price_html = "<h4 class='product-price'>$" . $discounted_price. "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+				$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 				$sale_label = "<span class='sale'>-$prod_dis%</span>";
 			} else {
 				$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
@@ -195,7 +195,7 @@ if(isset($_POST["get_seleted_Category"]) || isset($_POST["selectBrand"]) || isse
 
 			if ($prod_w_dis == 1) {
 				$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-				$price_html = "<h4 class='product-price'>$" . $discounted_price . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+				$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
 				$sale_label = "<span class='sale'>-$prod_dis%</span>";
 			} else {
 				$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
@@ -506,7 +506,7 @@ if (isset($_POST["Common"])) {
 						<input type="hidden" name="total_count" value="' . $x . '">
 						<input type="hidden" name="item_name_' . $x . '" value="' . $row["product_title"] . '">
 						<input type="hidden" name="item_number_' . $x . '" value="' . $x . '">
-						<input type="hidden" name="amount_' . $x . '" value="' . $discounted_price . '">
+						<input type="hidden" name="amount_' . $x . '" value="' . number_format($discounted_price , 2)  . '">
 						<input type="hidden" name="quantity_' . $x . '" value="' . $row["qty"] . '">';
 					}
 				
