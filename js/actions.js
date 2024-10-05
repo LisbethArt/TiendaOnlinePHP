@@ -285,26 +285,39 @@ $(document).ready(function(){
 		('.total').each() this is loop funtion repeat for class .total and in every repetation we will perform sum operation of class .total value 
 		and then show the result into class .net_total
 	*/
-	$("body").delegate(".qty","keyup",function(event){
+		$("body").delegate(".qty", "keyup", function(event) {
 		event.preventDefault();
-		var row = $(this).parent().parent();
-		var price = row.find('.price').val();
-		var qty = row.find('.qty').val();
-		if (isNaN(qty)) {
+		var row = $(this).closest('tr');
+		
+		// Quitar comas del valor antes de parsearlo
+		var price = parseFloat(row.find('.price').val().replace(/,/g, '')); // Reemplazar las comas con cadenas vacías
+		var qty = parseFloat(row.find('.qty').val().replace(/,/g, '')); // Reemplazar las comas con cadenas vacías
+	
+		if (isNaN(qty) || qty < 1) {
 			qty = 1;
-		};
-		if (qty < 1) {
-			qty = 1;
-		};
-		var total = price * qty;
-		row.find('.total').val(total);
-		var net_total=0;
-		$('.total').each(function(){
-			net_total += ($(this).val()-0);
-		})
-		$('.net_total').html("Total1 : $ " +net_total);
-
-	})
+		}
+	
+		var total = (price * qty).toFixed(2);
+		row.find('.total').val(parseFloat(total).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+	
+		var net_total = 0;
+		$('.total').each(function() {
+			net_total += parseFloat($(this).val().replace(/,/g, '')) || 0;
+		});
+	
+		net_total(); // Call net_total to update Total1
+	});
+	
+	/*
+		net_total function is used to calcuate total amount of cart item
+	*/
+	function net_total() {
+		var net_total = 0;
+		$('.total').each(function() {
+			net_total += parseFloat($(this).val().replace(/,/g, '')) || 0;
+		});
+		$('.net_total').html("Total2 : $ " + net_total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+	}
 	//Change Quantity end here 
 
 	/*
@@ -369,22 +382,6 @@ $(document).ready(function(){
 					net_total();
 			}
 		})
-	}
-	/*
-		net_total function is used to calcuate total amount of cart item
-	*/
-	function net_total(){
-		var net_total = 0;
-		$('.qty').each(function(){
-			var row = $(this).parent().parent();
-			var price  = row.find('.price').val();
-			var total = price * $(this).val()-0;
-			row.find('.total').val(total);
-		})
-		$('.total').each(function(){
-			net_total += ($(this).val()-0);
-		})
-		$('.net_total').html("Total2 : $ " +net_total);
 	}
 
 	//remove product from cart

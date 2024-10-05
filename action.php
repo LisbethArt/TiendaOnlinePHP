@@ -492,13 +492,16 @@ if (isset($_POST["Common"])) {
 						$product_price = $row["product_price"];
 						$prod_dis = isset($row['product_discount']) ? $row['product_discount'] : 0;
 						$prod_w_dis = isset($row['product_with_discount']) ? $row['product_with_discount'] : 0;
-				
+					
 						if ($prod_w_dis == 1) {
 							$discounted_price = $product_price - ($product_price * ($prod_dis / 100));
 						} else {
 							$discounted_price = $product_price;
 						}
-				
+					
+						// Format discounted_price to two decimal places
+						$discounted_price = number_format($discounted_price, 2, '.', '');
+					
 						echo '
 						<input type="hidden" name="total_count" value="' . $x . '">
 						<input type="hidden" name="item_name_' . $x . '" value="' . $row["product_title"] . '">

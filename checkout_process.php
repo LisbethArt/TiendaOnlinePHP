@@ -53,7 +53,7 @@ if (isset($_SESSION["uid"])) {
             $prod_price=$prod_price_+$str;
             $prod_qty_+$str = $_POST['prod_qty_'.$i];
             $prod_qty=$prod_qty_+$str;
-            $sub_total=(int)$prod_price*(int)$prod_qty;
+            $sub_total=(float)$prod_price*(int)$prod_qty;
             $sql1="INSERT INTO `order_products` 
             (`order_pro_id`,`order_id`,`product_id`,`qty`,`amt`) 
             VALUES (NULL, '$order_id','$prod_id','$prod_qty','$sub_total')";

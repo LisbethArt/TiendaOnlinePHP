@@ -236,7 +236,7 @@ span.price {
 					<table class='table table-condensed'>
 					<thead><tr>
 					<th >N.</th>
-					<th >Nombre del Producto</th>
+					<th >Nombre del Productoxd</th>
 					<th >	Cantidad	</th>
 					<th >	Monto</th></tr>
 					</thead>
@@ -251,7 +251,7 @@ span.price {
 						$amount_ = $_POST['amount_'.$i];
 						
 						$quantity_ = $_POST['quantity_'.$i];
-						$total=$total+$amount_ ;
+						$total=$total+$amount_*$quantity_;
 						$sql = "SELECT product_id FROM products WHERE product_title='$item_name_'";
 						$query = mysqli_query($con,$sql);
 						$row=mysqli_fetch_array($query);
