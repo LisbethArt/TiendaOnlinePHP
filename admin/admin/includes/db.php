@@ -1,6 +1,6 @@
 <?php
 
-$servername = "localhost:3306"; // Agrega el número de puerto después de dos puntos
+$servername = "localhost:3308"; // Agrega el número de puerto después de dos puntos
 $username = "root";
 $password = "";
 $db = "tiendaOnline";

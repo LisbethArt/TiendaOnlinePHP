@@ -88,7 +88,7 @@ if ($row = mysqli_fetch_assoc($result)) {
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Precio</label>
-                                            <input type="text" id="price" name="price" required class="form-control" value="<?php echo $price; ?>">
+                                            <input type="text" id="price" name="price" required class="form-control" value="<?php echo number_format($price, 2); ?>">
                                         </div>
                                     </div>
                                 </div>

@@ -34,6 +34,7 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
             echo "cart_login";
             exit();
         }
+        echo "login_success";
         $BackToMyPage = $_SERVER['HTTP_REFERER'];
         if(!isset($BackToMyPage)) {
             header('Location: '.$BackToMyPage);
@@ -42,21 +43,8 @@ if(isset($_POST["email"]) && isset($_POST["password"])){
         }
         exit;
     } else {
-        $sql = "SELECT * FROM admin_info WHERE admin_email = '$email' AND admin_password = '".md5($password)."'";
-        $run_query = mysqli_query($con, $sql);
-        $count = mysqli_num_rows($run_query);
-
-        if($count == 1){
-            $row = mysqli_fetch_array($run_query);
-            $_SESSION["uid"] = $row["admin_id"];
-            $_SESSION["name"] = $row["admin_name"];
-            $ip_add = getenv("REMOTE_ADDR");
-            echo "<script> location.href='admin/add_products.php'; </script>";
-            exit;
-        } else {
-            echo "<span style='color:red;'>Usuario o contraseña incorrecto</span>";
-            exit();
-        }
+        echo "<span style='color:red;'>Usuario o contraseña incorrecto</span>";
+        exit();
     }
 }
 ?>

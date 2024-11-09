@@ -96,11 +96,12 @@ if (isset($_GET['de_success']) && $_GET['del_success'] == 1) {
                 $result = mysqli_query($con, "select product_id,product_image, product_title,product_price from products order by product_id desc Limit $page1,12") or die("query 1 incorrect.....");
 
                 while (list($product_id, $image, $product_name, $price) = mysqli_fetch_array($result)) {
+                  $formatted_price = number_format($price, 2);
                   echo "<tr><td><img src='../../product_images/$image' style='width:50px; height:50px; border:groove #000'></td><td>$product_name</td>
-                        <td>$price</td>
+                        <td>$formatted_price</td>
                         <td>
-                        <a class=' btn btn-success' href='products_list.php?product_id=$product_id&action=delete'>Eliminar</a>
-                        <a class=' btn btn-warning' href='update_products.php?product_id=$product_id&action=update'>Actualizar</a>
+                        <a class='btn btn-success' href='products_list.php?product_id=$product_id&action=delete'>Eliminar</a>
+                        <a class='btn btn-warning' href='update_products.php?product_id=$product_id&action=update'>Actualizar</a>
                         </td></tr>";
                 }
 
