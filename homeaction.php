@@ -110,7 +110,7 @@ if(isset($_POST["gethomeProduct"])){
 		$start = 0;
 	}
     
-	$product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id BETWEEN 71 AND 74";
+	$product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id BETWEEN 21 AND 30";
 	$run_query = mysqli_query($con,$product_query);
 	if(mysqli_num_rows($run_query) > 0){
         

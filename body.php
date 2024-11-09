@@ -142,7 +142,7 @@
                     include 'db.php';
 								
                     
-					$product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id BETWEEN 70 AND 75";
+					$product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id BETWEEN 1 AND 10";
                 $run_query = mysqli_query($con,$product_query);
                 if(mysqli_num_rows($run_query) > 0){
 
@@ -304,7 +304,7 @@
                     include 'db.php';
 								
                     
-					$product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id BETWEEN 59 AND 65";
+					$product_query = "SELECT * FROM products,categories WHERE product_cat=cat_id AND product_id BETWEEN 11 AND 20";
                 $run_query = mysqli_query($con,$product_query);
                 if(mysqli_num_rows($run_query) > 0){
 

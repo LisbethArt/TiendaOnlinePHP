@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1:3306
--- Generation Time: Oct 27, 2023 at 07:20 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Servidor: 127.0.0.1:3308
+-- Tiempo de generación: 09-11-2024 a las 05:59:48
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `tiendaonline`
+-- Base de datos: `tiendaonline`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin_info`
+-- Estructura de tabla para la tabla `admin_info`
 --
 
 CREATE TABLE `admin_info` (
@@ -35,7 +35,7 @@ CREATE TABLE `admin_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `admin_info`
+-- Volcado de datos para la tabla `admin_info`
 --
 
 INSERT INTO `admin_info` (`admin_id`, `admin_name`, `admin_email`, `admin_password`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `admin_info` (`admin_id`, `admin_name`, `admin_email`, `admin_passwo
 -- --------------------------------------------------------
 
 --
--- Table structure for table `brands`
+-- Estructura de tabla para la tabla `brands`
 --
 
 CREATE TABLE `brands` (
@@ -53,7 +53,7 @@ CREATE TABLE `brands` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `brands`
+-- Volcado de datos para la tabla `brands`
 --
 
 INSERT INTO `brands` (`brand_id`, `brand_title`) VALUES
@@ -67,7 +67,7 @@ INSERT INTO `brands` (`brand_id`, `brand_title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Estructura de tabla para la tabla `cart`
 --
 
 CREATE TABLE `cart` (
@@ -79,18 +79,15 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `cart`
+-- Volcado de datos para la tabla `cart`
 --
 
 INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`) VALUES
 (6, 26, '::1', 4, 1),
 (9, 10, '::1', 7, 1),
 (10, 11, '::1', 7, 1),
-(11, 45, '::1', 7, 1),
 (44, 5, '::1', 3, 0),
 (46, 2, '::1', 3, 0),
-(49, 60, '::1', 8, 1),
-(50, 61, '::1', 8, 1),
 (51, 1, '::1', 8, 1),
 (52, 5, '::1', 9, 1),
 (53, 2, '::1', 14, 1),
@@ -98,17 +95,12 @@ INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`) VALUES
 (55, 5, '::1', 14, 1),
 (56, 1, '::1', 9, 1),
 (57, 2, '::1', 9, 1),
-(71, 61, '127.0.0.1', -1, 1),
-(155, 65, '::1', 29, 1),
-(156, 75, '::1', 29, 1),
-(157, 74, '::1', 29, 1),
-(158, 76, '::1', 29, 1),
-(160, 39, '::1', -1, 1);
+(161, 2, '::1', -1, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Estructura de tabla para la tabla `categories`
 --
 
 CREATE TABLE `categories` (
@@ -117,7 +109,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `categories`
+-- Volcado de datos para la tabla `categories`
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
@@ -132,7 +124,7 @@ INSERT INTO `categories` (`cat_id`, `cat_title`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `email_info`
+-- Estructura de tabla para la tabla `email_info`
 --
 
 CREATE TABLE `email_info` (
@@ -141,7 +133,7 @@ CREATE TABLE `email_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `email_info`
+-- Volcado de datos para la tabla `email_info`
 --
 
 INSERT INTO `email_info` (`email_id`, `email`) VALUES
@@ -152,7 +144,7 @@ INSERT INTO `email_info` (`email_id`, `email`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `logs`
+-- Estructura de tabla para la tabla `logs`
 --
 
 CREATE TABLE `logs` (
@@ -165,7 +157,7 @@ CREATE TABLE `logs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders`
+-- Estructura de tabla para la tabla `orders`
 --
 
 CREATE TABLE `orders` (
@@ -178,7 +170,7 @@ CREATE TABLE `orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `orders`
+-- Volcado de datos para la tabla `orders`
 --
 
 INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `qty`, `trx_id`, `p_status`) VALUES
@@ -188,7 +180,7 @@ INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `qty`, `trx_id`, `p_s
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orders_info`
+-- Estructura de tabla para la tabla `orders_info`
 --
 
 CREATE TABLE `orders_info` (
@@ -209,7 +201,7 @@ CREATE TABLE `orders_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `orders_info`
+-- Volcado de datos para la tabla `orders_info`
 --
 
 INSERT INTO `orders_info` (`order_id`, `user_id`, `f_name`, `email`, `address`, `city`, `state`, `zip`, `cardname`, `cardnumber`, `expdate`, `prod_count`, `total_amt`, `cvv`) VALUES
@@ -218,7 +210,7 @@ INSERT INTO `orders_info` (`order_id`, `user_id`, `f_name`, `email`, `address`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order_products`
+-- Estructura de tabla para la tabla `order_products`
 --
 
 CREATE TABLE `order_products` (
@@ -232,7 +224,7 @@ CREATE TABLE `order_products` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Estructura de tabla para la tabla `products`
 --
 
 CREATE TABLE `products` (
@@ -240,66 +232,54 @@ CREATE TABLE `products` (
   `product_cat` int(100) NOT NULL,
   `product_brand` int(100) NOT NULL,
   `product_title` varchar(255) NOT NULL,
-  `product_price` int(100) NOT NULL,
+  `product_price` float DEFAULT 0,
   `product_desc` text NOT NULL,
   `product_image` text NOT NULL,
-  `product_keywords` text NOT NULL
+  `product_keywords` text NOT NULL,
+  `product_with_discount` tinyint(1) DEFAULT 0,
+  `product_discount` float DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `products`
+-- Volcado de datos para la tabla `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`) VALUES
-(1, 1, 2, 'Samsung galaxy s7 edge', 5000, 'Samsung galaxy s7 edge', 'product07.png', 'samsung mobile electronics'),
-(2, 1, 3, 'iPhone 5s', 25000, 'iphone 5s', 'http___pluspng.com_img-png_iphone-hd-png-iphone-apple-png-file-550.png', 'mobile iphone apple'),
-(3, 1, 3, 'iPad air 2', 30000, 'ipad apple brand', 'da4371ffa192a115f922b1c0dff88193.png', 'apple ipad tablet'),
-(4, 1, 3, 'iPhone 6s', 32000, 'Apple iPhone ', 'http___pluspng.com_img-png_iphone-6s-png-iphone-6s-gold-64gb-1000.png', 'iphone apple mobile'),
-(5, 1, 2, 'iPad 2', 10000, 'samsung ipad', 'iPad-air.png', 'ipad tablet samsung'),
-(6, 1, 1, 'samsung Laptop r series', 35000, 'samsung Black combination Laptop', 'laptop_PNG5939.png', 'samsung laptop '),
-(7, 1, 1, 'Laptop Pavillion', 50000, 'Laptop Hp Pavillion', 'laptop_PNG5930.png', 'Laptop Hp Pavillion'),
-(8, 1, 4, 'Sony', 40000, 'Sony Mobile', '530201353846AM_635_sony_xperia_z.png', 'sony mobile'),
-(9, 1, 3, 'iPhone New', 12000, 'iphone', 'iphone-hd-png-iphone-apple-png-file-550.png', 'iphone apple mobile'),
-(32, 5, 0, 'Book Shelf', 2500, 'book shelf', 'furniture-book-shelf-250x250.jpg', 'book shelf furniture'),
-(33, 6, 2, 'Refrigeradora', 35000, 'Refrigerator', 'CT_WM_BTS-BTC-AppliancesHome_20150723.jpg', 'refrigerator samsung'),
-(36, 6, 5, 'plancha', 1500, 'gj', 'iron.JPG', 'iron'),
-(39, 6, 5, 'Licuadora', 2500, 'Mixer Grinder', 'singer-mixer-grinder-mg-46-medium_4bfa018096c25dec7ba0af40662856ef.jpg', 'Mixer Grinder'),
-(45, 1, 2, 'Samsung Galaxy Note 3', 10000, '0', 'samsung_galaxy_note3_note3neo.JPG', 'samsung galaxy Note 3 neo'),
-(46, 1, 2, 'Samsung Galaxy Note 3', 10000, '', 'samsung_galaxy_note3_note3neo.JPG', 'samsung galxaxy note 3 neo'),
-(47, 4, 6, 'Laptop', 650, 'nbk', 'product01.png', 'Dell Laptop'),
-(48, 1, 7, 'Headphones', 250, 'Headphones', 'product05.png', 'Headphones Sony'),
-(49, 1, 7, 'Headphones', 250, 'Headphones', 'product05.png', 'Headphones Sony'),
-(50, 3, 6, 'camisa de hombre', 350, 'shirts', 'pm1.JPG', 'suit boys shirts'),
-(51, 3, 6, 'camisa de hombre', 270, 'shirts', 'pm2.JPG', 'suit boys shirts'),
-(52, 3, 6, 'camisa de hombre', 453, 'shirts', 'pm3.JPG', 'suit boys shirts'),
-(53, 3, 6, 'camisa de hombre', 220, 'shirts', 'ms1.JPG', 'suit boys shirts'),
-(54, 3, 6, 'camisa de hombre', 290, 'shirts', 'ms2.JPG', 'suit boys shirts'),
-(55, 3, 6, 'camisa de hombre', 259, 'shirts', 'ms3.JPG', 'suit boys shirts'),
-(56, 3, 6, 'camisa de hombre', 299, 'shirts', 'pm7.JPG', 'suit boys shirts'),
-(57, 3, 6, 'camisa de hombre', 260, 'shirts', 'i3.JPG', 'suit boys shirts'),
-(58, 3, 6, 'camisa de hombre', 350, 'shirts', 'pm9.JPG', 'suit boys shirts'),
-(59, 3, 6, 'camisa de hombre', 855, 'shirts', 'a2.JPG', 'suit boys shirts'),
-(60, 3, 6, 'camisa de hombre', 150, 'shirts', 'pm11.JPG', 'suit boys shirts'),
-(61, 3, 6, 'camisa de hombre', 215, 'shirts', 'pm12.JPG', 'suit boys shirts'),
-(62, 3, 6, 'camisa de hombre', 299, 'shirts', 'pm13.JPG', 'suit boys shirts'),
-(63, 3, 6, 'Jeans de hombre', 550, 'Pants', 'pt1.JPG', 'boys Jeans Pant'),
-(64, 3, 6, 'Jeans de hombre', 460, 'pants', 'pt2.JPG', 'boys Jeans Pant'),
-(65, 3, 6, 'Jeans de hombre', 470, 'pants', 'pt3.JPG', 'boys Jeans Pant'),
-(70, 3, 6, 'pantalon de caballero', 399, 'pants', 'pt8.JPG', 'boys Jeans Pant'),
-(71, 1, 2, 'Samsung galaxy s7', 5000, 'Samsung galaxy s7', 'product07.png', 'samsung mobile electronics'),
-(72, 7, 2, 'sony Headphones', 3500, 'sony Headphones', 'product02.png', 'sony Headphones electronics gadgets'),
-(73, 7, 2, 'samsung Headphones', 3500, 'samsung Headphones', 'product05.png', 'samsung Headphones electronics gadgets'),
-(74, 1, 1, 'HP i5 laptop', 5500, 'HP i5 laptop', 'product01.png', 'HP i5 laptop electronics'),
-(75, 1, 1, 'HP i7 laptop 8gb ram', 5500, 'HP i7 laptop 8gb ram', 'product03.png', 'HP i7 laptop 8gb ram electronics'),
-(76, 1, 5, 'sony note 6gb ram', 4500, 'sony note 6gb ram', 'product04.png', 'sony note 6gb ram mobile electronics'),
-(77, 1, 4, 'MSV laptop 16gb ram NVIDEA Graphics', 5499, 'MSV laptop 16gb ram', 'product06.png', 'MSV laptop 16gb ram NVIDEA Graphics electronics'),
-(78, 1, 5, 'dell laptop 8gb ram intel integerated Graphics', 4579, 'dell laptop 8gb ram intel integerated Graphics', 'product08.png', 'dell laptop 8gb ram intel integerated Graphics electronics'),
-(79, 7, 2, 'camera with 3D pixels', 2569, 'camera with 3D pixels', 'product09.png', 'camera with 3D pixels camera electronics gadgets');
+INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_title`, `product_price`, `product_desc`, `product_image`, `product_keywords`, `product_with_discount`, `product_discount`) VALUES
+(1, 1, 2, 'Samsung S22 Ultra', 899.99, 'Samsung S22 Ultra', 'product07.png', 'samsung mobile electronics', 0, 0),
+(2, 1, 3, 'iPhone 16 Pro', 1350, 'iPhone 16 Pro', 'iphone16pro.png', 'mobile iphone apple', 1, 10),
+(3, 1, 2, 'iPad Air 13', 1050, 'iPad Air 13', 'ipadA13.png', 'apple ipad tablet', 0, 0),
+(4, 1, 3, 'iPhone 14 Pro', 1250, 'iPhone 14 Pro', 'iphone14pro.png', 'iphone apple mobile', 0, 0),
+(5, 1, 2, 'iPad Air 5ta Gen', 850, 'iPad Air 5ta Gen', 'iPad-air5ta.png', 'ipad tablet samsung', 0, 0),
+(6, 1, 1, 'Samsung Laptop R Series', 950, 'Samsung Laptop R Series', 'laptop_PNG5939.png', 'samsung laptop ', 0, 0),
+(7, 1, 1, 'Laptop Pavillion', 750, 'Laptop Hp Pavillion', 'laptop_PNG5930.png', 'laptop hp pavillion', 0, 0),
+(8, 1, 4, 'Sony Xperia', 999.95, 'Sony Mobile', 'sonyXperia.png', 'sony mobile', 0, 0),
+(9, 5, 0, 'Estantería', 55.2, 'Estantería', 'furniture-book-shelf-250x250.jpg', 'book shelf furniture', 0, 0),
+(10, 6, 2, 'Refrigeradora', 740.2, 'Refrigerator', 'CT_WM_BTS-BTC-AppliancesHome_20150723.jpg', 'refrigerator samsung', 0, 0),
+(11, 6, 5, 'Plancha', 25, 'Plancha', 'iron.JPG', 'iron', 0, 0),
+(12, 6, 5, 'Licuadora', 20.5, 'Licuadora', 'singer-mixer-grinder-mg-46-medium_4bfa018096c25dec7ba0af40662856ef.jpg', 'Mixer Grinder', 0, 0),
+(13, 3, 6, 'Camisa de hombre', 15.9, 'Camisas', 'pm1.JPG', 'suit boys shirts', 0, 0),
+(14, 3, 6, 'Camisa de hombre', 18.2, 'Camisas', 'pm2.JPG', 'suit boys shirts', 0, 0),
+(15, 3, 6, 'Camisa de hombre', 41.26, 'Camisas', 'pm3.JPG', 'suit boys shirts', 0, 0),
+(16, 3, 6, 'Camisa de hombre', 20, 'Camisas', 'ms1.JPG', 'suit boys shirts', 0, 0),
+(17, 3, 6, 'Camisa de hombre', 34.2, 'Camisas', 'ms2.JPG', 'suit boys shirts', 0, 0),
+(18, 3, 6, 'Camisa de hombre', 21.8, 'Camisas', 'ms3.JPG', 'suit boys shirts', 0, 0),
+(19, 3, 6, 'Camisa de hombre', 15, 'Camisas', 'pm7.JPG', 'suit boys shirts', 0, 0),
+(20, 3, 6, 'Camisa de hombre', 16, 'Camisas', 'i3.JPG', 'suit boys shirts', 0, 0),
+(21, 3, 6, 'Camisa de hombre', 18, 'Camisas', 'pm9.JPG', 'suit boys shirts', 0, 0),
+(22, 3, 6, 'Camisa de hombre', 20, 'Camisas', 'a2.JPG', 'suit boys shirts', 0, 0),
+(23, 3, 6, 'Camisa de hombre', 24.5, 'Camisas', 'pm11.JPG', 'suit boys shirts', 0, 0),
+(24, 3, 6, 'Camisa de hombre', 25.2, 'Camisas', 'pm12.JPG', 'suit boys shirts', 0, 0),
+(25, 3, 6, 'Camisa de hombre', 19.7, 'Camisas', 'pm13.JPG', 'suit boys shirts', 0, 0),
+(26, 3, 6, 'Jeans de hombre', 30.5, 'Pantalones', 'pt1.JPG', 'boys Jeans Pant', 0, 0),
+(27, 3, 6, 'Jeans de hombre', 40.8, 'Pantalones', 'pt2.JPG', 'boys Jeans Pant', 0, 0),
+(28, 3, 6, 'Jeans de hombre', 28.7, 'Pantalones', 'pt3.JPG', 'boys Jeans Pant', 0, 0),
+(29, 3, 6, 'Pantalón de caballero', 21.6, 'Pantalones', 'pt8.JPG', 'boys Jeans Pant', 0, 0),
+(30, 7, 2, 'Cámara', 10.45, 'Cámara', 'product09.png', 'camera with 3D pixels camera electronics gadgets', 0, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_info`
+-- Estructura de tabla para la tabla `user_info`
 --
 
 CREATE TABLE `user_info` (
@@ -314,7 +294,7 @@ CREATE TABLE `user_info` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `user_info`
+-- Volcado de datos para la tabla `user_info`
 --
 
 INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `address1`, `address2`) VALUES
@@ -322,7 +302,7 @@ INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `passwor
 (29, 'Emerson', 'Rivas', 'emerson@gmail.com', '123456789', '11223344', 'Mi casa', 'San Salvado');
 
 --
--- Triggers `user_info`
+-- Disparadores `user_info`
 --
 DELIMITER $$
 CREATE TRIGGER `after_user_info_insert` AFTER INSERT ON `user_info` FOR EACH ROW BEGIN 
@@ -334,7 +314,7 @@ DELIMITER ;
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_info_backup`
+-- Estructura de tabla para la tabla `user_info_backup`
 --
 
 CREATE TABLE `user_info_backup` (
@@ -349,7 +329,7 @@ CREATE TABLE `user_info_backup` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
--- Dumping data for table `user_info_backup`
+-- Volcado de datos para la tabla `user_info_backup`
 --
 
 INSERT INTO `user_info_backup` (`user_id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `address1`, `address2`) VALUES
@@ -369,60 +349,60 @@ INSERT INTO `user_info_backup` (`user_id`, `first_name`, `last_name`, `email`, `
 (30, 'leonardo', 'Mejia', 'mejia@gmail.com', '123456789', '12345678', 'San Salvador', 'Su casa');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `admin_info`
+-- Indices de la tabla `admin_info`
 --
 ALTER TABLE `admin_info`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `brands`
+-- Indices de la tabla `brands`
 --
 ALTER TABLE `brands`
   ADD PRIMARY KEY (`brand_id`);
 
 --
--- Indexes for table `cart`
+-- Indices de la tabla `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `categories`
+-- Indices de la tabla `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
--- Indexes for table `email_info`
+-- Indices de la tabla `email_info`
 --
 ALTER TABLE `email_info`
   ADD PRIMARY KEY (`email_id`);
 
 --
--- Indexes for table `logs`
+-- Indices de la tabla `logs`
 --
 ALTER TABLE `logs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `orders`
+-- Indices de la tabla `orders`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `orders_info`
+-- Indices de la tabla `orders_info`
 --
 ALTER TABLE `orders_info`
   ADD PRIMARY KEY (`order_id`),
   ADD KEY `user_id` (`user_id`);
 
 --
--- Indexes for table `order_products`
+-- Indices de la tabla `order_products`
 --
 ALTER TABLE `order_products`
   ADD PRIMARY KEY (`order_pro_id`),
@@ -430,111 +410,111 @@ ALTER TABLE `order_products`
   ADD KEY `product_id` (`product_id`);
 
 --
--- Indexes for table `products`
+-- Indices de la tabla `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `user_info`
+-- Indices de la tabla `user_info`
 --
 ALTER TABLE `user_info`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- Indexes for table `user_info_backup`
+-- Indices de la tabla `user_info_backup`
 --
 ALTER TABLE `user_info_backup`
   ADD PRIMARY KEY (`user_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `admin_info`
+-- AUTO_INCREMENT de la tabla `admin_info`
 --
 ALTER TABLE `admin_info`
   MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `brands`
+-- AUTO_INCREMENT de la tabla `brands`
 --
 ALTER TABLE `brands`
   MODIFY `brand_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=161;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
   MODIFY `cat_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT for table `email_info`
+-- AUTO_INCREMENT de la tabla `email_info`
 --
 ALTER TABLE `email_info`
   MODIFY `email_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `logs`
+-- AUTO_INCREMENT de la tabla `logs`
 --
 ALTER TABLE `logs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `orders`
+-- AUTO_INCREMENT de la tabla `orders`
 --
 ALTER TABLE `orders`
   MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `orders_info`
+-- AUTO_INCREMENT de la tabla `orders_info`
 --
 ALTER TABLE `orders_info`
   MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `order_products`
+-- AUTO_INCREMENT de la tabla `order_products`
 --
 ALTER TABLE `order_products`
   MODIFY `order_pro_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
   MODIFY `product_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=92;
 
 --
--- AUTO_INCREMENT for table `user_info`
+-- AUTO_INCREMENT de la tabla `user_info`
 --
 ALTER TABLE `user_info`
   MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT for table `user_info_backup`
+-- AUTO_INCREMENT de la tabla `user_info_backup`
 --
 ALTER TABLE `user_info_backup`
   MODIFY `user_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `orders_info`
+-- Filtros para la tabla `orders_info`
 --
 ALTER TABLE `orders_info`
   ADD CONSTRAINT `user_id` FOREIGN KEY (`user_id`) REFERENCES `user_info` (`user_id`);
 
 --
--- Constraints for table `order_products`
+-- Filtros para la tabla `order_products`
 --
 ALTER TABLE `order_products`
   ADD CONSTRAINT `order_products` FOREIGN KEY (`order_id`) REFERENCES `orders_info` (`order_id`) ON DELETE NO ACTION ON UPDATE CASCADE,
