@@ -159,10 +159,10 @@
 
 						if ($prod_w_dis == 1) {
 							$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-							$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+							$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
 							$sale_label = "<span class='sale'>-$prod_dis%</span>";
 						} else {
-							$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+							$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
 							$sale_label = "";
 						}
 
@@ -321,10 +321,10 @@
 
 						if ($prod_w_dis == 1) {
 							$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-							$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+							$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
 							$sale_label = "<span class='sale'>-$prod_dis%</span>";
 						} else {
-							$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+							$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
 							$sale_label = "";
 						}
 
@@ -391,7 +391,7 @@
 				<div class="row">
 				<div class="col-md-4 col-xs-6">
 						<div class="section-title">
-							<h4 class="title">Top ventas1</h4>
+							<h4 class="title">Top ventas</h4>
 							<div class="section-nav">
 								<div id="slick-nav-3" class="products-slick-nav"></div>
 							</div>
@@ -418,9 +418,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
 										}
 								
 										echo "
@@ -462,9 +462,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
 										}
 								
 										echo "
@@ -491,7 +491,7 @@
 
 					<div class="col-md-4 col-xs-6">
                 <div class="section-title">
-                    <h4 class="title">Top ventas2</h4>
+                    <h4 class="title">Top ventas</h4>
                     <div class="section-nav">
                         <div id="slick-nav-4" class="products-slick-nav"></div>
                     </div>
@@ -517,9 +517,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
 										}
 								
 										echo "
@@ -561,9 +561,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
 										}
 								
 										echo "
@@ -592,7 +592,7 @@
 
             <div class="col-md-4 col-xs-6">
                 <div class="section-title">
-                    <h4 class="title">Top ventas3</h4>
+                    <h4 class="title">Top ventas</h4>
                     <div class="section-nav">
                         <div id="slick-nav-5" class="products-slick-nav"></div>
                     </div>
@@ -618,9 +618,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
 										}
 								
 										echo "
@@ -662,9 +662,9 @@
 								
 										if ($prod_w_dis == 1) {
 											$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
 										} else {
-											$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+											$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
 										}
 								
 										echo "

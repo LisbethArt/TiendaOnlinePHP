@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 09-11-2024 a las 05:59:48
+-- Tiempo de generación: 09-11-2024 a las 06:18:51
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -87,15 +87,12 @@ INSERT INTO `cart` (`id`, `p_id`, `ip_add`, `user_id`, `qty`) VALUES
 (9, 10, '::1', 7, 1),
 (10, 11, '::1', 7, 1),
 (44, 5, '::1', 3, 0),
-(46, 2, '::1', 3, 0),
 (51, 1, '::1', 8, 1),
 (52, 5, '::1', 9, 1),
-(53, 2, '::1', 14, 1),
-(54, 3, '::1', 14, 1),
+(54, 3, '::1', 14, 4),
 (55, 5, '::1', 14, 1),
 (56, 1, '::1', 9, 1),
-(57, 2, '::1', 9, 1),
-(161, 2, '::1', -1, 1);
+(162, 3, '::1', -1, 4);
 
 -- --------------------------------------------------------
 
@@ -249,7 +246,7 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_t
 (2, 1, 3, 'iPhone 16 Pro', 1350, 'iPhone 16 Pro', 'iphone16pro.png', 'mobile iphone apple', 1, 10),
 (3, 1, 2, 'iPad Air 13', 1050, 'iPad Air 13', 'ipadA13.png', 'apple ipad tablet', 0, 0),
 (4, 1, 3, 'iPhone 14 Pro', 1250, 'iPhone 14 Pro', 'iphone14pro.png', 'iphone apple mobile', 0, 0),
-(5, 1, 2, 'iPad Air 5ta Gen', 850, 'iPad Air 5ta Gen', 'iPad-air5ta.png', 'ipad tablet samsung', 0, 0),
+(5, 1, 2, 'iPad Air 5ta Gen', 850, 'iPad Air 5ta Gen', 'iPad-air5ta.png', 'ipad tablet samsung', 1, 15),
 (6, 1, 1, 'Samsung Laptop R Series', 950, 'Samsung Laptop R Series', 'laptop_PNG5939.png', 'samsung laptop ', 0, 0),
 (7, 1, 1, 'Laptop Pavillion', 750, 'Laptop Hp Pavillion', 'laptop_PNG5930.png', 'laptop hp pavillion', 0, 0),
 (8, 1, 4, 'Sony Xperia', 999.95, 'Sony Mobile', 'sonyXperia.png', 'sony mobile', 0, 0),
@@ -257,18 +254,18 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_t
 (10, 6, 2, 'Refrigeradora', 740.2, 'Refrigerator', 'CT_WM_BTS-BTC-AppliancesHome_20150723.jpg', 'refrigerator samsung', 0, 0),
 (11, 6, 5, 'Plancha', 25, 'Plancha', 'iron.JPG', 'iron', 0, 0),
 (12, 6, 5, 'Licuadora', 20.5, 'Licuadora', 'singer-mixer-grinder-mg-46-medium_4bfa018096c25dec7ba0af40662856ef.jpg', 'Mixer Grinder', 0, 0),
-(13, 3, 6, 'Camisa de hombre', 15.9, 'Camisas', 'pm1.JPG', 'suit boys shirts', 0, 0),
+(13, 3, 6, 'Camisa de hombre', 15.9, 'Camisas', 'pm1.JPG', 'suit boys shirts', 1, 5),
 (14, 3, 6, 'Camisa de hombre', 18.2, 'Camisas', 'pm2.JPG', 'suit boys shirts', 0, 0),
 (15, 3, 6, 'Camisa de hombre', 41.26, 'Camisas', 'pm3.JPG', 'suit boys shirts', 0, 0),
 (16, 3, 6, 'Camisa de hombre', 20, 'Camisas', 'ms1.JPG', 'suit boys shirts', 0, 0),
-(17, 3, 6, 'Camisa de hombre', 34.2, 'Camisas', 'ms2.JPG', 'suit boys shirts', 0, 0),
+(17, 3, 6, 'Camisa de hombre', 34.2, 'Camisas', 'ms2.JPG', 'suit boys shirts', 1, 6),
 (18, 3, 6, 'Camisa de hombre', 21.8, 'Camisas', 'ms3.JPG', 'suit boys shirts', 0, 0),
 (19, 3, 6, 'Camisa de hombre', 15, 'Camisas', 'pm7.JPG', 'suit boys shirts', 0, 0),
 (20, 3, 6, 'Camisa de hombre', 16, 'Camisas', 'i3.JPG', 'suit boys shirts', 0, 0),
 (21, 3, 6, 'Camisa de hombre', 18, 'Camisas', 'pm9.JPG', 'suit boys shirts', 0, 0),
 (22, 3, 6, 'Camisa de hombre', 20, 'Camisas', 'a2.JPG', 'suit boys shirts', 0, 0),
 (23, 3, 6, 'Camisa de hombre', 24.5, 'Camisas', 'pm11.JPG', 'suit boys shirts', 0, 0),
-(24, 3, 6, 'Camisa de hombre', 25.2, 'Camisas', 'pm12.JPG', 'suit boys shirts', 0, 0),
+(24, 3, 6, 'Camisa de hombre', 25.2, 'Camisas', 'pm12.JPG', 'suit boys shirts', 1, 4),
 (25, 3, 6, 'Camisa de hombre', 19.7, 'Camisas', 'pm13.JPG', 'suit boys shirts', 0, 0),
 (26, 3, 6, 'Jeans de hombre', 30.5, 'Pantalones', 'pt1.JPG', 'boys Jeans Pant', 0, 0),
 (27, 3, 6, 'Jeans de hombre', 40.8, 'Pantalones', 'pt2.JPG', 'boys Jeans Pant', 0, 0),
@@ -447,7 +444,7 @@ ALTER TABLE `brands`
 -- AUTO_INCREMENT de la tabla `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=162;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=163;
 
 --
 -- AUTO_INCREMENT de la tabla `categories`

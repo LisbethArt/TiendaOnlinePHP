@@ -24,7 +24,7 @@
                     <div class="signup-form">
                         <h2 class="form-title">Admin register Here</h2>
                         <form method="post" class="register-form" id="register-form" action="login.php">
-                             <div class="alert alert-danger"><h4 id="e_msg"><?php include('./server/errors.php'); ?></h4></div>
+                             <div class="alert alert-danger"></div>
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="admin_name" id="name" placeholder="Tu Nombre"/>

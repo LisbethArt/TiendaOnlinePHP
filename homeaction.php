@@ -77,9 +77,9 @@ if(isset($_POST["getProducthome"])){
 
 			if ($prod_w_dis == 1) {
 				$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
-				$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . $pro_price . "</del></h4>";
+				$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
 			} else {
-				$price_html = "<h4 class='product-price'>$" . $pro_price . "</h4>";
+				$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
 			}
 			
 			echo "
@@ -139,7 +139,7 @@ if(isset($_POST["gethomeProduct"])){
 									<div class='product-body'>
 										<p class='product-category'>$cat_name</p>
 										<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
-										<h4 class='product-price header-cart-item-info'>$". $pro_price ."<del class='product-old-price'>$0Home2.00</del></h4>
+										<h4 class='product-price header-cart-item-info'>$". number_format($pro_price, 2) ."<del class='product-old-price'>$0Home2.00</del></h4>
 										<div class='product-rating'>
 											<i class='fa fa-star'></i>
 											<i class='fa fa-star'></i>
@@ -178,30 +178,40 @@ if(isset($_POST["get_seleted_Category"]) ||  isset($_POST["search"])){
 	}
 	
 	$run_query = mysqli_query($con,$sql);
-	while($row=mysqli_fetch_array($run_query)){
-			$pro_id    = $row['product_id'];
-			$pro_cat   = $row['product_cat'];
-			$pro_brand = $row['product_brand'];
-			$pro_title = $row['product_title'];
-			$pro_price = $row['product_price'];
-			$pro_image = $row['product_image'];
-            $cat_name = $row["cat_title"];
-			echo "
-					
-                        
+	while($row = mysqli_fetch_array($run_query)){
+		$pro_id    = $row['product_id'];
+		$pro_cat   = $row['product_cat'];
+		$pro_brand = $row['product_brand'];
+		$pro_title = $row['product_title'];
+		$pro_price = $row['product_price'];
+		$pro_image = $row['product_image'];
+		$cat_name = $row["cat_title"];
+		$prod_w_dis = $row['product_with_discount'];
+		$prod_dis = $row['product_discount'];
+
+		if ($prod_w_dis == 1) {
+			$discounted_price = $pro_price - ($pro_price * ($prod_dis / 100));
+			$price_html = "<h4 class='product-price'>$" . number_format($discounted_price , 2)  . "<del class='product-old-price'>$" . number_format($pro_price, 2) . "</del></h4>";
+			$sale_label = "<span class='sale'>-$prod_dis%</span>";
+		} else {
+			$price_html = "<h4 class='product-price'>$" . number_format($pro_price, 2) . "</h4>";
+			$sale_label = "";
+		}
+
+		echo "    
                         <div class='col-md-4 col-xs-6'>
 								<a href='product.php?p=$pro_id'><div class='product'>
 									<div class='product-img'>
-										<img  src='product_images/$pro_image' class='img-card' alt=''>
+										<img src='product_images/$pro_image' class='img-card' alt=''>
 										<div class='product-label'>
-											<span class='sale'>-20home2%</span>
+											$sale_label
 											<span class='new'>NEW</span>
 										</div>
 									</div></a>
 									<div class='product-body'>
 										<p class='product-category'>$cat_name</p>
-										<h3 class='product-name header-cart-item-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
-										<h4 class='product-price header-cart-item-info'>$". $pro_price ."<del class='product-old-price'>$0Home3.00</del></h4>
+													<h3 class='product-name'><a href='product.php?p=$pro_id'>$pro_title</a></h3>
+													$price_html
 										<div class='product-rating'>
 											<i class='fa fa-star'></i>
 											<i class='fa fa-star'></i>

@@ -316,7 +316,7 @@ $(document).ready(function(){
 		$('.total').each(function() {
 			net_total += parseFloat($(this).val().replace(/,/g, '')) || 0;
 		});
-		$('.net_total').html("Total2 : $ " + net_total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
+		$('.net_total').html("Total: $ " + net_total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }));
 	}
 	//Change Quantity end here 
 

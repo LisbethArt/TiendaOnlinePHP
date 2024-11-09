@@ -30,7 +30,7 @@ if (isset($_POST["login_user_with_product"])) {
 								<form onsubmit="return false" id="login" class="login100-form ">
 									<div class="billing-details jumbotron">
                                     <div class="section-title">
-                                        <h2 class="login100-form-title p-b-49" >Iniciar Sesión Aquí</h2>
+                                        <h2 class="login100-form-title p-b-49" >Iniciar Sesión</h2>
                                     </div>
                                    
                                     
@@ -53,7 +53,7 @@ if (isset($_POST["login_user_with_product"])) {
                                     
                                         <input class="primary-btn btn-block"   type="submit"  Value="Iniciar Sesión">
                                         
-                                        <div class="panel-footer"><div class="alert alert-danger"><h4 id="e_msg"></h4></div></div>
+                                        <div class="panel-footer"><h5 id="e_msg"></h5></div></div>
                                     
                                     	
                                         
